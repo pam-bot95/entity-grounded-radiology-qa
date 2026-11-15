@@ -74,7 +74,7 @@ The questions and answers come from [VQA-RAD](https://huggingface.co/datasets/fl
 
 ## Authors
 
-Paramita Naskar, Rishan Sen and Kushal Agarwal
+Paramita Naskar,Kushal Agarwal and Rishan Sen
 
 ## License
 
