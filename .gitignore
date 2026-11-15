@@ -1,0 +1,14 @@
+# model outputs and checkpoints
+qwen2.5-1.5b-medvqa-lora/
+checkpoint-*/
+*.safetensors
+*.bin
+# generated files
+train-2.jsonl
+eval_results.xlsx
+# secrets and system files
+.env
+*token*
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
