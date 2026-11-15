@@ -5,7 +5,7 @@
 
 A small language model (**Qwen2.5-1.5B-Instruct**, fine-tuned with **4-bit QLoRA** on a single free Colab T4 GPU) answers radiology questions **from text alone**: the question plus a categorized list of clinical entities extracted from the image's findings. The model never sees the image.
 
-![Pipeline overview](figures/pipeline_overview.png)
+![Pipeline overview](pipeline_overview.png)
 
 ## Idea
 
@@ -16,8 +16,7 @@ Many radiology questions ("Is the lesion in the left lung?", "Which organ system
 
 Only the LoRA adapters are trained, so the whole pipeline fits on a free-tier GPU.
 
-![Model architecture](figures/model_architecture.png)
-
+![Model architecture](model_architecture.png)
 ## Results
 
 Evaluated on a **269-question validation split** (149 closed yes/no, 120 open free-text), a random slice of the training file (see [Limitations](#limitations)).
@@ -30,7 +29,7 @@ Evaluated on a **269-question validation split** (149 closed yes/no, 120 open fr
 
 For reference, always answering "yes" scores 0.5503 on the closed questions.
 
-![Validation results](figures/validation_results.png)
+![Validation results](validation_results.png)
 
 Open-set BLEU-1 is 0.3949 and ROUGE-1 / ROUGE-L are 0.4466. Exact match is a strict lower bound for free-text answers: near-misses such as "cardiac" vs. "cardiovascular" score zero.
 
@@ -55,7 +54,7 @@ Open-set BLEU-1 is 0.3949 and ROUGE-1 / ROUGE-L are 0.4466. Exact match is a str
 
 Key settings: 4-bit NF4 with double quantization, fp16 compute; LoRA r=16, alpha=32, dropout 0.05 on all attention and MLP projections; 3 epochs; effective batch size 16; learning rate 2e-4 (cosine, 10 warmup steps); max length 512; greedy decoding, 32 new tokens.
 
-![Data splits](figures/data_splits.png)
+![Data splits](data_splits.png)
 
 ## Limitations
 
@@ -67,7 +66,7 @@ We report these openly because they affect how the numbers should be read:
 - **Small data, one run.** 2,244 questions in total, a single training run, and no clinician review. The closed-question score has a margin of roughly ±7.5 points.
 - **Planned ablations** (question-only, zero-shot, live NER on the original test split) have not been run yet.
 
-![Entity-answer overlap](figures/entity_answer_overlap.png)
+![Entity answer overlap](entity_answer_overlap.png)
 
 ## Data
 
@@ -75,7 +74,7 @@ The questions and answers come from [VQA-RAD](https://huggingface.co/datasets/fl
 
 ## Authors
 
-Paramita Naskar, Rishan Sen and Kushal
+Paramita Naskar, Rishan Sen and Kushal Agarwal
 
 ## License
 
