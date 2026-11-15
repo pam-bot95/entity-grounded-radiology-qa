@@ -1,0 +1,19 @@
+
+cff-version: 1.2.0
+message: "If you use this research project, please cite it."
+title: "Entity-Grounded Question Answering for Radiology VQA"
+type: software
+
+authors:
+  - family-names: "Naskar"
+    given-names: "Paramita"
+  - family-names: "Agarwal"
+    given-names: "Kushal"
+  - family-names: "sen"
+    given-names: Rishan"
+
+repository-code: "https://github.com/pam-bot95/entity-grounded-radiology-qa"
+
+abstract: >
+  An entity-grounded question answering research project
+  for medical visual question answering using VQA-RAD.
